@@ -1,19 +1,22 @@
-var ModularPattern = function () {
 
-    FirstWP = function () {
-        alert("Calling First Process.");
-    }
+(function () {
+    var ModularPattern = function () {
 
-    SecondWP = function () {
-        alert("Calling Second Process.");
-    }
+        FirstWP = function () {
+            alert("Calling First Process.");
+        }
 
-    Process = {
-        FirsrWorkerProess: FirstWP(),
-        SecondWorkerPocess: SecondWP()
-    }
+        SecondWP = function () {
+            alert("Calling Second Process.");
+        }
 
-    Process.FirsrWorkerProess;
-    Process.SecondWorkerPocess;
+        Process = {
+            FirsrWorkerProess: FirstWP(),
+            SecondWorkerPocess: SecondWP()
+        }
 
-};
+        Process.FirsrWorkerProess;
+        Process.SecondWorkerPocess;
+
+    };
+} ());
