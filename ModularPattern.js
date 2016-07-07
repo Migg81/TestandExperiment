@@ -1,22 +1,37 @@
 
-(function () {
-    var ModularPattern = function () {
+var ModularPattern = (function () {
 
-        FirstWP = function () {
-            alert("Calling First Process.");
-        }
-
-        SecondWP = function () {
-            alert("Calling Second Process.");
-        }
-
-        Process = {
-            FirsrWorkerProess: FirstWP(),
-            SecondWorkerPocess: SecondWP()
-        }
-
-        Process.FirsrWorkerProess;
-        Process.SecondWorkerPocess;
-
+    var FirstWP = function () {
+        alert("Calling First Process.");
     };
-} ());
+
+    var SecondWP = function () {
+        alert("Calling Second Process.");
+    };
+
+    return {
+        FirsrWorkerProess: FirstWP,
+        SecondWorkerPocess: SecondWP
+    };
+
+})();
+
+var stooge = {
+"first-name": "Jerome",
+"last-name": "Howard"
+};
+var Module = (function () {
+
+  var privateMethod = function (message) {
+    console.log(message);
+  };
+
+  var publicMethod = function (text) {
+    privateMethod(text);
+  };
+  
+  return {
+    publicMethod: publicMethod
+  };
+
+})();
