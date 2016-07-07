@@ -13,39 +13,10 @@
                 <p class="event received">Tomar is Ready</p>
                 <input type="button" onclick="writeUserData('1','Sam','sam@gmail.com')"  value="Add Reminder Note" />
                 <input type="button" onclick="addNewUser('sam@gymail.com','w@rr10r')"  value="Add Reminder User" />
+                <input type="button" onclick="SignInFireBase('sam@gymail.com','w@rr10r')"  value="SignIn to CrossMob" />
             </div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
-        <script>
-          // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyCTpn8mJeAKmRqQtiQriC8noq35yOZ1j4g",
-            authDomain: "crossmob-83688.firebaseapp.com",
-            databaseURL: "https://crossmob-83688.firebaseio.com",
-            storageBucket: "crossmob-83688.appspot.com",
-          };
-          firebase.initializeApp(config);
-          addNewUser=function(email,password){
-              
-               firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-              // Handle Errors here.
-              var errorCode = error.code;
-              var errorMessage = error.message;
-              // ...
-            });
-          };
-         
-          function writeUserData(userId, name, email) {
-                  /*firebase.database().ref('users/' + userId).set({
-                    username: name,
-                    email: email
-                  });*/
-
-                  firebase.database().ref().set({
-                    Testname: name,
-                    email: email
-                  });
-                }
-        </script>
+        <script src="\fireBaseCrossMob.js" type="text/javascript" ></script>
     </body>
 </html>
