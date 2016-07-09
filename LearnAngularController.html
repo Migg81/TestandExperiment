@@ -11,6 +11,10 @@
        <div>{{error}}</div>     
        <div>
            <div>
+               <input type="search" ng-model="username">
+               <input type="button" value="View Profile" ng-click="fetchUserInfo()">
+           </div>
+           <div>
                {{user.login}}
            </div>
            <div>
