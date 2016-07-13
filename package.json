@@ -1,0 +1,13 @@
+{
+  "name": "crossmob",
+  "version": "0.0.0",
+  "description": "Exprementing Angular with Node",
+  "author": "Samiran Majumder <first.last@example.com>",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}

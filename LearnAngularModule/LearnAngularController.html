@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="/angular.min.js"></script>
+<script type="text/javascript" src="/LearnAngular.js"></script>
+<html lang="en" ng-app="githubmodule">
+    <head>
+        <meta charset="utf-8" />
+        <title>Test Angular Demo</title>
+    </head>
+   <body ng-controller="MainController">
+       <h1>SAMIRAN</h1>
+        <h1>{{message}}</h1>   
+       <div>{{error}}</div>     
+       <div>
+           <div>
+               <input type="search" ng-model="username">
+               <input type="button" value="View Profile" ng-click="search()">
+           </div>
+           <div>
+               {{user.login}}
+           </div>
+           <div>
+               {{user.created_at}}
+           </div>
+           <div>
+               <img alt="" ng-src="{{user.avatar_url}}" title="{{user.login}}">
+           </div>
+       </div>
+       <div>
+           <table>
+               <thead>
+               <tr>
+                   <th>Name</th>
+                   <th>full_name</th>
+                   <th>Owner url</th>
+               </tr>
+               </thead>
+               <tbody ng-repeat="repo in repos">
+                   <tr>
+                   <th>{{repo.name}}</th>
+                   <th>{{repo.full_name}}</th>
+                   <th>{{repo.owner.url}}</th>
+               </tr>
+               </tbody>
+           </table>
+       </div>
+   </body>
+</html>
