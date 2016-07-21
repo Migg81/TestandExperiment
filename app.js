@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var http = require('http');
 var fs = require('fs');
 var server = http.createServer(function(request, response) {
@@ -47,3 +48,17 @@ console.log("Received Request: " + request.url);
         response.end("No Page Found");
     }
 }).listen(5858); 
+=======
+var express = require("express");
+var app     = express();
+var path    = require("path");
+
+//app.use(express.static(path.join(__dirname, '../', 'LearnAngularModule')))
+app.use(express.static(__dirname + '/LearnAngularModule'));
+
+app.listen(3000);
+
+console.log("Running at Port 3000");
+
+console.log("dir path : "+__dirname + '/LearnAngularModule');
+>>>>>>> bfa41ec86f3519a22028698ed45b71f8f25764f7
