@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<script type="text/javascript" src="/LearnAngularModule/angular.min.js"></script>
+<script type="text/javascript" src="/angular.min.js"></script>
 <script type="text/javascript" src="/gitRepoUser.js"></script>
 <script type="text/javascript" src="/github.js"></script>
 <html lang="en" ng-app="githubmodule">
@@ -14,7 +14,10 @@
        <div>
            <div>
                <input type="search" ng-model="username">
-               <input type="button" value="View Profile" ng-click="search()">
+               <input type="button" value="View Profile" ng-click="search()">          
+           </div>
+           <div>
+               <h> countdown :</h>{{countdown}}
            </div>
            <div>
                {{user.login}}
