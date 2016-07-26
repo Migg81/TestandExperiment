@@ -1,7 +1,7 @@
 
 (function () {
 
-    var app = angular.module("githubmodule", []);
+    var app = angular.module("githubmodule");
     var MainController = function ($scope, github,$interval) {
 
         $scope.message = "Hello Angular";

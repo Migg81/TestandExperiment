@@ -3,8 +3,9 @@ var app     = express();
 var path    = require("path");
 
 //app.use(express.static(path.join(__dirname, '../', 'LearnAngularModule')))
-app.use(express.static(__dirname + '/AngularByUsingGithubAPi'));
+
 app.use(express.static(__dirname + '/LearnAngularModule'));
+app.use(express.static(__dirname + '/AngularByUsingGithubAPi'));
 
 app.listen(3000);
 
