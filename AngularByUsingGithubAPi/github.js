@@ -21,6 +21,6 @@
         };
     };
 
-    var module=angular.module("githubmodule");
+    var module=angular.module("githubViewer");
     module.factory("github",github);
 }());
