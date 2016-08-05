@@ -15,9 +15,27 @@
             });
         };
 
+        var gerRepoDetails=function(username,reposname) {
+            var repo;
+            var repoUrl="https://api.github.com/repos/"+username+"/"+ reposname;           
+            return $http.get(repoUrl)
+            .then(onContributors).then(fetchContributorInfo);
+        };
+
+        var onContributors = function (response) {
+            repo = response.data;
+            return $http.get(response.data.contributors_url)
+        };
+
+        var fetchContributorInfo=function(responce){
+            repo.contributors=responce.data;
+            return repo;
+        };
+
         return {
             getUser:getUser,
-            getRepos:getRepos
+            getRepos:getRepos,
+            gerRepoDetails:gerRepoDetails
         };
     };
 

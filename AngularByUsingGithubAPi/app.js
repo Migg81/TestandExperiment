@@ -8,6 +8,9 @@ app.config(function ($routeProvider) {
     ).when("/user/:username",{
         templateUrl :"user.html",
         controller :"UserController"
+    }).when("/repos/:username/:reposname",{
+        templateUrl :"gitrepo.html",
+        controller :"RepoContributorsController"
     })
     .otherwise({redirectTo:"/main"})
 }); 

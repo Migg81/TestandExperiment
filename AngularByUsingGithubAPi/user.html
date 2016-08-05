@@ -18,7 +18,7 @@
                </thead>
                <tbody ng-repeat="repo in repos">
                    <tr>
-                   <th>{{repo.name}}</th>
+                   <th><a href="#/repos/{{user.login}}/{{repo.name}}">{{repo.name}}<a></th>
                    <th>{{repo.full_name}}</th>
                    <th>{{repo.owner.url}}</th>
                </tr>

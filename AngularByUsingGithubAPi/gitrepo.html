@@ -1,0 +1,19 @@
+<div>
+    <a href="#/main">Back To Search</a>
+    <a href="#/user/{{repo.owner.login}}">Back To Search</a>
+</div>
+<div>
+    <label>Id: {{repo.id}}</label>
+    <label>Name: {{repo.name}}</label>
+    <label>Full NameId: {{repo.full_name}}</label>
+    <label>Description: {{repo.Description}}</label>
+</div>
+<div>
+    <ul>
+        <li ng-repeat="contributor in repo.contributors">
+            <img alt="Avatar Image" ng-src="{{contributor.avatar_url}}" title="{{contributor.login}}">
+            {{contributor.login}}
+        </li>
+    </ul>
+</div>
+
