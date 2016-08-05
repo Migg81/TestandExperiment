@@ -1,8 +1,8 @@
 
 (function () {
 
-    var app = angular.module("githubmodule");
-    var MainController = function ($scope, github,$interval) {
+    var app = angular.module("githubViewer");
+    var UserController = function ($scope, github,$routeParams) {
 
         $scope.message = "Hello Angular";
 
@@ -15,27 +15,12 @@
             $scope.error = "Somthing went wron try after some time.";
         };
 
-        $scope.search=function (){
-           github.getUser($scope.username).then(onUserComplete, onError);
-        };
-
         var fetchRepoInfo=function(data) {
             $scope.repos=data;
         };
-
-        var decrementCountdown=function(){
-            $scope.countdown -=1;
-            if($scope.countdown<1)
-            {
-                $scope.search();
-            }
-        };
-        var stratCountdown=function () {
-            $interval(decrementCountdown,1000,$scope.countdown)
-        };
-        $scope.countdown=8;
-        stratCountdown();
+        $scope.username=$routeParams.username;
+        github.getUser($scope.username).then(onUserComplete, onError);
     };
 
-    app.controller('MainController', ["$scope", "github","$interval", MainController]);
+    app.controller('UserController', UserController);
 } ());

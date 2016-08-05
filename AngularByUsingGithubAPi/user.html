@@ -1,0 +1,27 @@
+       <div>
+           <div>
+               {{user.login}}
+           </div>
+           <div>
+               {{user.created_at}}
+           </div>
+           <div>
+               <img alt="" ng-src="{{user.avatar_url}}" title="{{user.login}}">
+           </div>
+           <table>
+               <thead>
+               <tr>
+                   <th>Name</th>
+                   <th>full_name</th>
+                   <th>Owner url</th>
+               </tr>
+               </thead>
+               <tbody ng-repeat="repo in repos">
+                   <tr>
+                   <th>{{repo.name}}</th>
+                   <th>{{repo.full_name}}</th>
+                   <th>{{repo.owner.url}}</th>
+               </tr>
+               </tbody>
+           </table>
+       </div>

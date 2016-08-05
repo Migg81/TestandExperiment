@@ -2,7 +2,7 @@
 (function () {
 
     var app = angular.module("githubViewer");
-    var MainController = function ($scope,$interval) {
+    var MainController = function ($scope,$interval,$location) {
 
         $scope.message = "Hello Angular";
 
@@ -23,6 +23,7 @@
               $interval.cancel(countdownInterval) ;
               $scope.countdown=null;
            }
+           $location.path("/user/"+$scope.username);
         };
         $scope.countdown=8;
         stratCountdown();
